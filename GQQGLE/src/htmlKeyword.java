@@ -6,5 +6,6 @@ public class htmlKeyword {   //擷取html的原始碼
     public htmlKeyword(String urlStr) {
     	this.urlStr = urlStr;
     }
+    
 	
 }
