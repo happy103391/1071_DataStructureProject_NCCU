@@ -4,4 +4,7 @@ public class PictureCounter {
 	public int piccount;
 	public double picweight;
 
+	public PictureCounter(String img) {
+		this.img= img;
+	}
 }
