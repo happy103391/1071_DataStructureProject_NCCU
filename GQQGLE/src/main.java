@@ -6,6 +6,9 @@ public class main {
 		// TODO Auto-generated method stub
 		System.out.print("請輸入關鍵字：");
         Scanner sc = new Scanner(System.in);
+        while(sc.hasNextLine()) {
+        	
+        }
 	}
 
 }
