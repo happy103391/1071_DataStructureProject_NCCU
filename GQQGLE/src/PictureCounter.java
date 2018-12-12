@@ -6,5 +6,6 @@ public class PictureCounter {
 
 	public PictureCounter(String img) {
 		this.img= img;
+		
 	}
 }
