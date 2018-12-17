@@ -36,6 +36,8 @@ public class htmlContent {   //擷取html的原始碼
 			content = fetchContent();      //去抓取html的原始碼
 			
 		}
+		
+		
     
   }
 }
