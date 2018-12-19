@@ -1,5 +1,6 @@
 import java.util.Scanner;
-
+import java.*;
+import java.applet.*;
 public class main {
 
 	public static void main(String[] args) {
