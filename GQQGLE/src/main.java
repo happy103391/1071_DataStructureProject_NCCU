@@ -10,8 +10,5 @@ public class main {
         while(sc.hasNextLine()) {
         	
         }
-        sc.close();
 	}
-
-	
 }
