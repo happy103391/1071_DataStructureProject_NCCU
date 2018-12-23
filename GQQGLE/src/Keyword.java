@@ -6,9 +6,11 @@ public class Keyword {
 		public int count;
 		public double weight;
 		
-		public Keyword(String name,int count, double weight) {  //constructor
-			this.name = name;
+		public Keyword(double weight) {  //constructor
+			//this.name = name;
 			this.weight = weight;
-			this.count= count;
+			//this.count= count;
 		}
+
+	
 	}

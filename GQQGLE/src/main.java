@@ -7,8 +7,10 @@ public class main {
 		// TODO Auto-generated method stub
 		System.out.print("請輸入關鍵字：");
         Scanner sc = new Scanner(System.in);
-        while(sc.hasNextLine()) {
-        	
+        String a = sc.toString();
+        switch(a) {
+        	case "梗圖":
+        		Keyword aa = new Keyword(3.0);
         }
 	}
 }
