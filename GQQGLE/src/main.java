@@ -10,7 +10,11 @@ public class main {
         String a = sc.toString();
         switch(a) {
         	case "梗圖":
-        		Keyword aa = new Keyword(3.0);
+        		Keyword aa = new Keyword(5.0);
+        		break;
+        	case "黃色":
+        		Keyword bb = new Keyword(3);
+        		break;
         }
 	}
 }
