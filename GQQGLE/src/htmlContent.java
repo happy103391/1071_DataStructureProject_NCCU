@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Stack;
 import java.net.*;
 public class htmlContent {   //擷取html的原始碼
     private String urlStr;  //這是網址
@@ -37,7 +38,23 @@ public class htmlContent {   //擷取html的原始碼
 			content = fetchContent();      //去抓取html的原始碼
 			
 		}
+		int FirstIndex = content.indexOf(">");
+		content = content.substring(FirstIndex+1, content.length());  //從<!doctype> 後的內容開始搜尋
+		content = content.replaceAll("<meta>", "");    //忽略掉meta
+		
+		
+		Stack<String> tagStack = new Stack<>();      //先傳進去的東西會最後出來
+		
+		int indexOfOpen =0;      //一開始先歸零
+		
+		
+		while((indexOfOpen = content.indexOf("<img class=", indexOfOpen))!=-1){    //找第一個tag在哪，前綴
+			int indexOfClose = content.indexOf("post images", indexOfOpen);      //找與他相對應的後綴
+			String fullTag = content.substring(indexOfOpen, indexOfClose);   //這是指前、後綴中間夾的內容
+			
   }
+    
+}
 }
     
     
