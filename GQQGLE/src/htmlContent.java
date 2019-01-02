@@ -50,9 +50,7 @@ public class htmlContent {   //擷取html的原始碼  找圖片
 		
 		while((indexOfOpen = content.indexOf("<img class=", indexOfOpen))!=-1){    //找第一個tag在哪，前綴
 			int indexOfClose = content.indexOf("alt=\"Post images\">", indexOfOpen);      //找與他相對應的後綴
-			String fullTag = content.substring(indexOfOpen, indexOfClose);   //這是指前、後綴中間夾的內容
-			
-			
+			String fullTag = content.substring(indexOfOpen, indexOfClose);   //這是指前、後綴中間夾的內容		
   }
     
 }
