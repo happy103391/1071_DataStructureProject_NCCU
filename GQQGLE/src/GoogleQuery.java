@@ -11,7 +11,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class GoogleQuery {
+public class GoogleQuery {           //找關鍵字
 	public String searchKeyword;
 	public String url;
 	public String content;

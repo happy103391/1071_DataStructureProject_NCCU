@@ -6,7 +6,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.Stack;
 import java.net.*;
-public class htmlContent {   //擷取html的原始碼
+public class htmlContent {   //擷取html的原始碼  找圖片
     private String urlStr;  //這是網址
     private String content; //html原始碼的內容
     
@@ -49,8 +49,9 @@ public class htmlContent {   //擷取html的原始碼
 		
 		
 		while((indexOfOpen = content.indexOf("<img class=", indexOfOpen))!=-1){    //找第一個tag在哪，前綴
-			int indexOfClose = content.indexOf("post images", indexOfOpen);      //找與他相對應的後綴
+			int indexOfClose = content.indexOf("alt=\"Post images\">", indexOfOpen);      //找與他相對應的後綴
 			String fullTag = content.substring(indexOfOpen, indexOfClose);   //這是指前、後綴中間夾的內容
+			
 			
   }
     
