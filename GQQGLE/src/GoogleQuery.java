@@ -65,4 +65,21 @@ public class GoogleQuery {           //找關鍵字
 		}
 		return retVal;
 	}
+	public int countKeyword(String keyword) throws IOException {   //回傳網站中的關鍵字數量
+        //throws:在方法中會有例外的發生，若不想在方法中直接處理，而想要由呼叫方法的呼叫者來處理
+		if(content == null) {
+			content = fetchContent();    //去擷取內容
+		}
+			content = content.toUpperCase();   //把格式變一樣(都大寫)
+			keyword = keyword.toUpperCase();
+				//找出這個content有幾個keyword
+				//to do : indexOf(keyword)
+			int count =0;
+			int i= content.indexOf(keyword);
+			while(i!=-1) {
+					count++;
+					content = content.substring(i + keyword.length(), content.length()); //(從 i+keyword 開始,在content之前結束)
+					i = content.indexOf(keyword);
+			}return count;
+	}
 }

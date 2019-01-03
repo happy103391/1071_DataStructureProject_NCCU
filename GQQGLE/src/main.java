@@ -11,8 +11,11 @@ public class main {
 			GoogleQuery googleQuery = new GoogleQuery(keyword);
 			googleQuery.query();
 			
+			
 		}
 		sc.close();
 	}
 
 }
+
+
