@@ -3,9 +3,10 @@ import java.net.URL;
 import java.util.Stack;
 
 public class Counter extends htmlContent  {
+	private String searchKeyword;
 	public Counter(String searchKeyword) {
 		super(searchKeyword);
-		// TODO Auto-generated constructor stub
+		this.searchKeyword=searchKeyword;	 
 	}
 	public int countKeyword(String keyword) throws IOException {   //找關鍵字
 		 if(content == null) {
@@ -23,14 +24,24 @@ public class Counter extends htmlContent  {
 	    	    i = content.indexOf(keyword);
 	    	 }return wcount;
 	      }
-	 public int countPic(String url) {
+	 
+	public int countPic(String content) throws IOException {
+		if(content==null){				
+			content=fetchContent();
+		}
 		 int pcount=0;
 		 
 		 String img ="<img class=";
+		 String img1 ="<img alt src=";
 		 int j = content.indexOf(img);
 		 while(j!=-1) {
 			 pcount++;
 			 content=content.substring(j+ img.length(), content.length());
+		 }
+		 int k = content.indexOf(img1);
+		 while(k!=-1) {
+			 pcount++;
+			 content=content.substring(k+img1.length(), content.length());
 		 }
 		 return pcount;
 	 }

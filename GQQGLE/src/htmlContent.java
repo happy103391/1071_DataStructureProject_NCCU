@@ -14,8 +14,7 @@ public class htmlContent {   //擷取html的原始碼  找圖片
     HttpURLConnection urlCon;
     BufferedReader urlIn;
     String str;
-   
-    
+  
     public htmlContent(String urlStr) {
     	this.urlStr = urlStr;
     }
@@ -33,7 +32,7 @@ public class htmlContent {   //擷取html的原始碼  找圖片
 		
 		return retVal;
 	}
-    public void match() throws IOException {     //也要拋出一個
+    /*public void match() throws IOException {     //也要拋出一個
 		if(content==null) {            //如果沒有HTML內容
 			content = fetchContent();      //去抓取html的原始碼
 			
@@ -52,7 +51,7 @@ public class htmlContent {   //擷取html的原始碼  找圖片
 			int indexOfClose = content.indexOf("alt=\"Post images\">", indexOfOpen);      //找與他相對應的後綴
 			String fullTag = content.substring(indexOfOpen, indexOfClose);   //這是指前、後綴中間夾的內容		
    }
- }
+ }*/
 }
     
     
