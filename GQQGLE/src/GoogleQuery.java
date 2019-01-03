@@ -20,7 +20,7 @@ public class GoogleQuery {           //找關鍵字
 		this.searchKeyword= searchKeyword;
 		this.url= "https://www.google.com/search?q="+ searchKeyword +"&oe=utf8&num=10";
 	}										//搜尋結果＋	關鍵字+		編碼（輸入中文字後不會跑出亂碼）＋搜尋筆數
-	private String fetchContent()throws IOException {
+	protected String fetchContent()throws IOException {
 		           
 		String retVal = "";
 		URL urlStr = new URL(this.url);		//把使用者的URL 傳進去
@@ -64,22 +64,5 @@ public class GoogleQuery {           //找關鍵字
 			}
 		}
 		return retVal;
-	}
-	public int countKeyword(String keyword) throws IOException {   //回傳網站中的關鍵字數量
-        //throws:在方法中會有例外的發生，若不想在方法中直接處理，而想要由呼叫方法的呼叫者來處理
-		if(content == null) {
-			content = fetchContent();    //去擷取內容
-		}
-			content = content.toUpperCase();   //把格式變一樣(都大寫)
-			keyword = keyword.toUpperCase();
-				//找出這個content有幾個keyword
-				//to do : indexOf(keyword)
-			int count =0;
-			int i= content.indexOf(keyword);
-			while(i!=-1) {
-					count++;
-					content = content.substring(i + keyword.length(), content.length()); //(從 i+keyword 開始,在content之前結束)
-					i = content.indexOf(keyword);
-			}return count;
 	}
 }
