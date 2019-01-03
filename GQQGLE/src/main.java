@@ -10,8 +10,12 @@ public class main {
 			String keyword =sc.next();
 			GoogleQuery googleQuery = new GoogleQuery(keyword);
 			googleQuery.query();
+			
+			
 		}
 		sc.close();
 	}
 
 }
+
+
