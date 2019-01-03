@@ -8,7 +8,7 @@ import java.util.Stack;
 import java.net.*;
 public class htmlContent {   //擷取html的原始碼  找圖片
     private String urlStr;  //這是網址
-    private String content; //html原始碼的內容
+    protected String content; //html原始碼的內容
     
     URL url;
     HttpURLConnection urlCon;
@@ -19,7 +19,7 @@ public class htmlContent {   //擷取html的原始碼  找圖片
     public htmlContent(String urlStr) {
     	this.urlStr = urlStr;
     }
-    private String fetchContent()throws IOException {    //網頁上的內容
+    public String fetchContent()throws IOException {    //網頁上的內容
 		URL url = new URL(this.urlStr);               //把使用者輸進去的網址傳入新的object裡，也就是url
 		URLConnection uc = url.openConnection();      //檢查網址的狀態是否存在or無法存取
 		InputStream is = uc.getInputStream();
@@ -51,9 +51,8 @@ public class htmlContent {   //擷取html的原始碼  找圖片
 		while((indexOfOpen = content.indexOf("<img class=", indexOfOpen))!=-1){    //找第一個tag在哪，前綴
 			int indexOfClose = content.indexOf("alt=\"Post images\">", indexOfOpen);      //找與他相對應的後綴
 			String fullTag = content.substring(indexOfOpen, indexOfClose);   //這是指前、後綴中間夾的內容		
-  }
-    
-}
+   }
+ }
 }
     
     

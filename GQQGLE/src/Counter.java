@@ -1,0 +1,42 @@
+import java.io.IOException;
+import java.net.URL;
+import java.util.Stack;
+
+public class Counter extends htmlContent  {
+	public Counter(String searchKeyword) {
+		super(searchKeyword);
+		// TODO Auto-generated constructor stub
+	}
+	public int countKeyword(String keyword) throws IOException {   //找關鍵字
+		 if(content == null) {
+	    	 content = fetchContent();    //去擷取內容
+	     }
+	    	 content = content.toUpperCase();   //把格式變一樣(都大寫)
+	    	 keyword = keyword.toUpperCase();
+	    	 //找出這個content有幾個keyword
+	    	 //to do : indexOf(keyword)
+	    	 int wcount =0;
+	    	 int i= content.indexOf(keyword);
+	    	 while(i!=-1) {
+	    		 wcount++;
+	    	    content = content.substring(i + keyword.length(), content.length()); //(從 i+keyword 開始,在content之前結束)
+	    	    i = content.indexOf(keyword);
+	    	 }return wcount;
+	      }
+	 public int countPic(String url) {
+		 int pcount=0;
+		 
+		 String img ="<img class=";
+		 int j = content.indexOf(img);
+		 while(j!=-1) {
+			 pcount++;
+			 content=content.substring(j+ img.length(), content.length());
+		 }
+		 return pcount;
+	 }
+	 public double calculate(int wcount,int pcount) {
+		 double score = (wcount*10)+(pcount*8);
+		 return score;
+	 }
+	}
+
