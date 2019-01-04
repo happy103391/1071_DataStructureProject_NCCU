@@ -10,7 +10,7 @@ public class main {
 			String keyword =sc.next();
 			GoogleQuery googleQuery = new GoogleQuery(keyword);
 			googleQuery.query();
-			String a = "";
+			double a = 0;
 			
 			
 		}
