@@ -75,13 +75,17 @@ public class Counter extends htmlContent  {
 		double score = (wcount*10)+(pcount*8);
 		return score;
 	}
-	
 	public String findSubLinks() throws IOException {
 		if(content == null) {
 	    	content = fetchContent();    //去擷取內容
 	    }
-	    	
-		String subLink;
+		
+		int indexStart =0;
+		indexStart =indexStart+ content.indexOf("a href=");
+		int indexEnd = content.indexOf("\">");
+		String subLink ="http://"+content.substring(indexStart+8, indexEnd);
+	    
+		return subLink;
 	}
 }
 

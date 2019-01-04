@@ -32,26 +32,47 @@ public class htmlContent {   //擷取html的原始碼  找圖片
 		
 		return retVal;
 	}
-    /*public void match() throws IOException {     //也要拋出一個
-		if(content==null) {            //如果沒有HTML內容
-			content = fetchContent();      //去抓取html的原始碼
-			
+    public int countKeyword(String keyword) throws IOException {   //找關鍵字
+		if(content == null) {
+	    	content = fetchContent();    //去擷取內容
+	    }
+	    	
+		content = content.toUpperCase();   //把格式變一樣(都大寫)
+	    keyword = keyword.toUpperCase();
+	    
+	    	//找出這個content有幾個keyword
+	    	//to do : indexOf(keyword)
+	    	int wcount = 0;
+	    	int i = content.indexOf(keyword);
+	    	while(i!=-1) {
+	    		wcount++;
+	    	    content = content.substring(i + keyword.length(), content.length()); //(從 i+keyword 開始,在content之前結束)
+	    	    i = content.indexOf(keyword);
+
+	    	 }return wcount;
+	      }
+	 
+    
+	public int countPic(String content) throws IOException {
+		if(content==null){				
+			content=fetchContent();
 		}
-		int FirstIndex = content.indexOf(">");
-		content = content.substring(FirstIndex+1, content.length());  //從<!doctype> 後的內容開始搜尋
-		content = content.replaceAll("<meta>", "");    //忽略掉meta
-		
-		
-		Stack<String> tagStack = new Stack<>();      //先傳進去的東西會最後出來
-		
-		int indexOfOpen =0;      //一開始先歸零
-		
-		
-		while((indexOfOpen = content.indexOf("<img class=", indexOfOpen))!=-1){    //找第一個tag在哪，前綴
-			int indexOfClose = content.indexOf("alt=\"Post images\">", indexOfOpen);      //找與他相對應的後綴
-			String fullTag = content.substring(indexOfOpen, indexOfClose);   //這是指前、後綴中間夾的內容		
-   }
- }*/
+		 int pcount=0;
+		 
+		 String img ="<img class=";
+		 String img1 ="<img alt src=";
+		 int j = content.indexOf(img);
+		 while(j!=-1) {
+			 pcount++;
+			 content=content.substring(j+ img.length(), content.length());
+		 }
+		 int k = content.indexOf(img1);
+		 while(k!=-1) {
+			 pcount++;
+			 content=content.substring(k+img1.length(), content.length());
+		 }
+		 return pcount;
+	 }
 }
     
     
