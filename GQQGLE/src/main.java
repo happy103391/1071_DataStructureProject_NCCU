@@ -28,13 +28,18 @@ public class main {
 		a1Node.addChild(a12Node);
 		WebPage a111 = new WebPage(a11.finder().get(0));
 		WebNode a111Node = new WebNode(a111);
+		a11Node.addChild(a111Node);
 		WebPage a112 = new WebPage(a11.finder().get(1));
 		WebNode a112Node = new WebNode(a112);
+		a11Node.addChild(a112Node);
 		WebPage a121 = new WebPage(a12.finder().get(0));
 		WebNode a121Node = new WebNode(a121);
+		a12Node.addChild(a121Node);
 		WebPage a122 = new WebPage(a12.finder().get(1));
 		WebNode a122Node = new WebNode(a122);
+		a12Node.addChild(a122Node);
 		
+		WebTree tree = new WebTree(a1);
 
 		
 		
