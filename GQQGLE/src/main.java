@@ -11,8 +11,8 @@ public class main {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
-		WebPage rootPage = new WebPage("https://www.google.com.tw/webhp?hl=zh-TW&dcr=0&sa=X&ved=0ahUKEwic9t2e6dbfAhWCdd4KHd8JDycQPAgH");
-		WebTree tree = new WebTree(rootPage);
+		/*WebPage rootPage = new WebPage("https://www.google.com.tw/webhp?hl=zh-TW&dcr=0&sa=X&ved=0ahUKEwic9t2e6dbfAhWCdd4KHd8JDycQPAgH");
+		WebTree tree = new WebTree(rootPage);*/
 		
 	/*tree.root.addChild(new WebNode(new WebPage(rootPage.finder().get(0))));
 	tree.root.addChild(new WebNode(new WebPage(rootPage.finder().get(1))));
@@ -30,6 +30,11 @@ public class main {
 		WebNode a111Node = new WebNode(a111);
 		WebPage a112 = new WebPage(a11.finder().get(1));
 		WebNode a112Node = new WebNode(a112);
+		WebPage a121 = new WebPage(a12.finder().get(0));
+		WebNode a121Node = new WebNode(a121);
+		WebPage a122 = new WebPage(a12.finder().get(1));
+		WebNode a122Node = new WebNode(a122);
+		
 
 		
 		
