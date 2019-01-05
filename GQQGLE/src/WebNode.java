@@ -12,7 +12,7 @@ public class WebNode {
 		this.children = new ArrayList<WebNode>(); 
 	}
 	public void setNodeScore(ArrayList<Keyword>keywords) throws IOException { //算node的分數
-		//webPage.calculate();   //讓webPage先算出自己的分數
+		   								  //讓webPage先算出自己的分數
 		this.nodeScore = webPage.score;   //把webPage的分數傳給nodeScore
 		
 		for(WebNode child :children) {   //先判斷是否為children

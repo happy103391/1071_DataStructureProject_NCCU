@@ -17,11 +17,11 @@ public class WebPage extends htmlContent  {
 	public GoogleQuery googleQuery;
 	public double score;
 	
-	public WebPage(String sublink) {		//網址和關鍵字
+	public WebPage(String url) {		//網址和關鍵字
 		super(content);
 		this.url = url;
 		this.content=content;
-		this.counter = new Counter(url);
+		//this.counter = new Counter(url);
 	}
 	public int countKeyword(String keyword) throws IOException {   //找關鍵字
 		if(content == null) {
@@ -51,7 +51,7 @@ public class WebPage extends htmlContent  {
 		 int pcount=0;
 		 
 		 String img ="<img class=";
-		 String img1 ="<img alt src=";
+		 String img1 ="<img alt src="; 
 		 int j = content.indexOf(img);
 		 while(j!=-1) {
 			 pcount++;
@@ -77,7 +77,7 @@ public class WebPage extends htmlContent  {
 	}*/
 	public double calculate(int wcount,int pcount) {
 		
-		double score = (wcount*10)+(pcount*8);
+		double score = (wcount*10)+(pcount*4);   //關鍵字的比重比較多，圖片的比重少一點
 		return score;
 	}
 	
