@@ -64,7 +64,7 @@ public class WebPage extends htmlContent  {
 		 }
 		 return pcount;
 	 }
-	public String findSubLinks() throws IOException {
+	/*public String findSubLinks() throws IOException {
 		if(content == null) {
 	    	content = fetchContent();    //去擷取內容
 	     }
@@ -74,34 +74,33 @@ public class WebPage extends htmlContent  {
 		String sublink ="http://"+content.substring(indexStart+8, indexEnd);
 	    
 		return sublink;
-	}
+	}*/
 	public double calculate(int wcount,int pcount) {
 		
 		double score = (wcount*10)+(pcount*8);
 		return score;
 	}
 	
-	
-	public ArrayList<String>finder() throws IOException{
-		ArrayList<String>linklist = new ArrayList<>();
+	public ArrayList<String> finder() throws IOException{		//findSubLinks
+		ArrayList<String>linklist = new ArrayList<String>();	//把所有抓到的子網頁放到arrayList裡
 		if(content == null) {
 			content = fetchContent();
 		}
 		
-		org.jsoup.nodes.Document document = Jsoup.parse(url);
-		Element contenta = document.getElementById("content");
-		Elements links = contenta.select("a");
+		org.jsoup.nodes.Document document = Jsoup.parse(url);	//抓子網頁裡的整篇html
+		//Elements content = document.select("a");	
+		Elements links = document.select("a[href]");
 		
 		for(Element link:links) {
-			String linkHref = link.attr("href");
+			
+			//String linkHref = link.attr("href");	//取得子網頁的網址
+			String linkHref = link.text();
 			if(linkHref.contains("http")!=true) {
 				linkHref = url +"/" +  linkHref;  
 			}
 			linklist.add(linkHref);
 			System.out.println(linkHref);
 		}
-			
-
 		
 		return linklist;
 	}

@@ -73,6 +73,8 @@ public class htmlContent {   //擷取html的原始碼  找圖片
 		 }
 		 return pcount;
 	 }
+	
+	
 }
     
     
