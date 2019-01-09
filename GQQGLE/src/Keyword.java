@@ -1,16 +1,13 @@
-
-import java.*;
 public class Keyword {
+	public String name;
+	public double weight;
 	
-		public String name;
-		public int count;
-		public double weight;
-		
-		public Keyword(double weight) {  //constructor
-			//this.name = name;
-			this.weight = weight;
-			//this.count= count;
-		}
-
-		
+	public Keyword(String name, double weight) {  //constructor
+		this.name = name;
+		this.weight = weight;
 	}
+	@Override                     //被改寫
+	public String toString() {
+		return "[" + name +", " + weight +"]"; 
+	}
+}

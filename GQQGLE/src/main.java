@@ -2,11 +2,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.swing.text.Document;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class main {
+	public static String keyWord;
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
@@ -17,6 +20,19 @@ public class main {
 	/*tree.root.addChild(new WebNode(new WebPage(rootPage.finder().get(0))));
 	tree.root.addChild(new WebNode(new WebPage(rootPage.finder().get(1))));
 	tree.root.children.get(0).addChild(new WebNode(new WebPage(rootPage.finder().get(0))));*/
+		
+		
+		
+	
+	
+		Scanner sc= new Scanner(System.in);
+		while(sc.hasNextLine()) {
+			keyWord =sc.next();
+			GoogleQuery googleQuery = new GoogleQuery(keyWord);
+			googleQuery.query();
+			
+			
+			//int a = 0;
 		
 		WebPage a1 = new WebPage("https://www.google.com.tw/webhp?hl=zh-TW&dcr=0&sa=X&ved=0ahUKEwic9t2e6dbfAhWCdd4KHd8JDycQPAgH");
 		WebNode a1Node = new WebNode(a1);
@@ -40,20 +56,7 @@ public class main {
 		a12Node.addChild(a122Node);
 		
 		WebTree tree = new WebTree(a1);
-
-		
-		
-		
-		
-	
-	
-		Scanner sc= new Scanner(System.in);
-		while(sc.hasNextLine()) {
-			String keyword =sc.next();
-			GoogleQuery googleQuery = new GoogleQuery(keyword);
-			googleQuery.query();
-			//int a = 0;
-			
+		System.out.print(tree.toString());
 			
 	/*		WebPage a1 = new WebPage(a[0]);
 			WebNode a1Node = new WebNode(a1);
