@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.jsoup.Jsoup;
@@ -15,10 +16,11 @@ public class GoogleQuery {           //找關鍵字
 	public String searchKeyword; 	//要找的關鍵字
 	public String url;				//網址
 	public String content;			 //爬下來的網頁內容
+	//public ArrayList<String> keywords;
 	
-	public GoogleQuery(String searchKeyword) {
+	public GoogleQuery(String searchKeyword) {			//原本是searchKeyword
 		this.searchKeyword= searchKeyword;
-		this.url= "https://www.google.com/search?q="+ searchKeyword +"&oe=utf8&num=10";
+		this.url= "https://www.google.com/search?q="+ searchKeyword +"&oe=utf8&num=25";
 	}										//搜尋結果＋	關鍵字+		編碼（輸入中文字後不會跑出亂碼）＋搜尋筆數
 	protected String fetchContent()throws IOException {
 		           
@@ -57,7 +59,7 @@ public class GoogleQuery {           //找關鍵字
 				
 				Element cite = li.select("cite").get(0);   //放在一個叫做「cite」的tag裡面，也是抓第一個
 				String citeUrl= cite.text();				//轉成文字的部分
-				System.out.println(title+" "+citeUrl);		//將title和網址印出來
+				//System.out.println(title+" "+citeUrl);		//將title和網址印出來
 				retVal.put(title,citeUrl);					//將title和網址放入retVal裡面
 			}catch(IndexOutOfBoundsException e) {
 				//do nothing

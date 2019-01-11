@@ -9,22 +9,22 @@ public class Counter extends htmlContent  {
 		this.searchKeyword=searchKeyword;	 
 	}
 	
-	public int countKeyword(String keyword) throws IOException {   //找關鍵字
+	public int countKeyword(String searchKeyword) throws IOException {   //找關鍵字
 		if(content == null) {
 	    	content = fetchContent();    //去擷取內容
 	    }
 	    	
 		content = content.toUpperCase();   //把格式變一樣(都大寫)
-	    keyword = keyword.toUpperCase();
+	    searchKeyword = searchKeyword.toUpperCase();
 	    
 	    	//找出這個content有幾個keyword
 	    	//to do : indexOf(keyword)
 	    	int wcount = 0;
-	    	int i = content.indexOf(keyword);
+	    	int i = content.indexOf(searchKeyword);
 	    	while(i!=-1) {
 	    		wcount++;
-	    	    content = content.substring(i + keyword.length(), content.length()); //(從 i+keyword 開始,在content之前結束)
-	    	    i = content.indexOf(keyword);
+	    	    content = content.substring(i + searchKeyword.length(), content.length()); //(從 i+keyword 開始,在content之前結束)
+	    	    i = content.indexOf(searchKeyword);
 
 	    	 }return wcount;
 	      }
