@@ -2,10 +2,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -16,11 +19,12 @@ public class GoogleQuery {           //找關鍵字
 	public String searchKeyword; 	//要找的關鍵字
 	public String url;				//網址
 	public String content;			 //爬下來的網頁內容
+	private ArrayList<String> vList;
 	//public ArrayList<String> keywords;
 	
 	public GoogleQuery(String searchKeyword) {			//原本是searchKeyword
 		this.searchKeyword= searchKeyword;
-		this.url= "https://www.google.com/search?q="+ searchKeyword +"&oe=utf8&num=25";
+		this.url= "https://www.google.com/search?q="+ searchKeyword +"&oe=utf8&num=30";
 	}										//搜尋結果＋	關鍵字+		編碼（輸入中文字後不會跑出亂碼）＋搜尋筆數
 	protected String fetchContent()throws IOException {
 		           
@@ -65,6 +69,31 @@ public class GoogleQuery {           //找關鍵字
 				//do nothing
 			}
 		}
+		
 		return retVal;
+	}
+	public ArrayList<String> converturl()  {   //將google的搜尋結果轉換成url的字串
+		HashMap<String, String> result;
+		try {
+			result = query();
+			Set r = result.keySet();
+			Iterator iterator = r.iterator();
+		while (iterator.hasNext()) {
+			ArrayList<String> vList = new ArrayList<String>();
+			String key = iterator.next().toString();
+			String value = result.get(key);
+			vList.add(value);
+		   }
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			
+		}
+		
+	
+	return vList;
+	 // 把所有的網站抓出來
+
+	// 把網站塞進node裡面 在呼叫finder
+
 	}
 }

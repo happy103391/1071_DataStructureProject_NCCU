@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class WebNode {
+public class WebNode{
 	public WebNode parent; // 節點會有parent
 	public ArrayList<WebNode> children;
 	public WebPage webPage;
@@ -12,13 +12,15 @@ public class WebNode {
 		this.children = new ArrayList<WebNode>();
 	}
 
-	public void setNodeScore() throws IOException { // 算node的分數
-		// 讓webPage先算出自己的分數
+	public double setNodeScore() throws Exception { // 算node的分數
+		//webPage.workurl(getlink(), getDepth());// 讓webPage先算出自己的分數
+	
+		webPage.getScore();
 		this.nodeScore = webPage.score; // 把webPage的分數傳給nodeScore
 
 		for (WebNode child : children) { // 先判斷是否為children
 			this.nodeScore += child.nodeScore; // 累加到nodeScore身上
-		}
+		}return nodeScore;
 	}
 
 	public void addChild(WebNode child) { // 增加下面的節點（子孫）
@@ -35,6 +37,10 @@ public class WebNode {
 			currNode = currNode.parent; // 此時新的currNode會變成他的parent
 		}
 		return retVal;
+	}
+	public String getlink() {
+		String link = webPage.url;
+		return link;
 	}
 
 }
