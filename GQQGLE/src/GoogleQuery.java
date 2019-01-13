@@ -24,7 +24,7 @@ public class GoogleQuery {           //找關鍵字
 	
 	public GoogleQuery(String searchKeyword) {			//原本是searchKeyword
 		this.searchKeyword= searchKeyword;
-		this.url= "https://www.google.com/search?q="+ searchKeyword +"&oe=utf8&num=30";
+		this.url= "https://www.google.com/search?q="+ searchKeyword +"&oe=utf8&num=40";
 	}										//搜尋結果＋	關鍵字+		編碼（輸入中文字後不會跑出亂碼）＋搜尋筆數
 	protected String fetchContent()throws IOException {
 		           
