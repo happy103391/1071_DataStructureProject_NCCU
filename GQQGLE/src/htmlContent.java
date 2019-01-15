@@ -52,7 +52,7 @@ public class htmlContent { // 擷取html的原始碼 找圖片
 				retVal = retVal + line + "\n";
 			}
 		} catch (Exception e) {
-			System.out.println("OMG");
+			//System.out.println("OMG");
 		}
 		return retVal;
 	}
@@ -79,19 +79,8 @@ public class htmlContent { // 擷取html的原始碼 找圖片
 		}
 		return wcount;
 	}
-
-	/*
-	 * public int countPic(String content) throws IOException { if(content==null){
-	 * content=fetchContent(); } int pcount=0;
-	 * 
-	 * String img ="<img class="; String img1 ="<img alt src="; int j =
-	 * content.indexOf(img); while(j!=-1) { pcount++; content=content.substring(j+
-	 * img.length(), content.length()); j = content.indexOf(img); } int k =
-	 * content.indexOf(img1); while(k!=-1) { pcount++;
-	 * content=content.substring(k+img1.length(), content.length()); k =
-	 * content.indexOf(img1); } return pcount; }
-	 */
 	
+	//找圖片囉
 	public String getHtml() throws Exception {
 		String line;
 		StringBuffer sb = new StringBuffer();
@@ -111,7 +100,7 @@ public class htmlContent { // 擷取html的原始碼 找圖片
 			isr.close();
 			in.close();
 		} catch (Exception e) {
-			System.out.println("WTF");
+			//System.out.println("WTF");
 		}
 		return sb.toString();
 	}
@@ -204,8 +193,7 @@ public class htmlContent { // 擷取html的原始碼 找圖片
 	              //pw.close();
 	              br.close();
 	        } catch (Exception e) {
-	              // TODO Auto-generated catch block
-	            
+	        	//do nothing
 	          }
 	         
 	     }return subWeb;

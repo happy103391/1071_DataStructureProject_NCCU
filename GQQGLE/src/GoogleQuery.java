@@ -85,7 +85,6 @@ public class GoogleQuery {           //找關鍵字
 			vList.add(value);
 		   }
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			
 		}
 		

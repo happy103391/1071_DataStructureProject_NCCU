@@ -20,7 +20,7 @@ public class WebPage extends htmlContent {
 
 	public String url;
 	public String name;
-	public Counter counter;
+	
 	public static String content;
 	public GoogleQuery googleQuery;
 	public double score;
@@ -41,36 +41,7 @@ public class WebPage extends htmlContent {
 		// this.counter = new Counter(url);
 	}
 	
-	/*public ArrayList<String> finder() throws IOException { // findSubLinks
-		ArrayList<String> linklist = new ArrayList<String>(); // 把所有抓到的子網頁放到arrayList裡
-		if (content == null) {
-			content = fetchContent();
-		}
-	try {
-		org.jsoup.nodes.Document document = Jsoup.parse(url); // 抓子網頁裡的整篇html
-		//Element content = document.getElementById("content");
-		Elements links = document.select("a");
-
-		for (Element link : links) {
-			
-			String linkHref = link.attr("href"); //取得子網頁的網址
-			//String linkText = link.text();
-			if (linkHref.contains("http") != true) {
-				linkHref = url + "/" + linkHref;
-				break;
-			}
-			linklist.add(linkHref);
-			System.out.println(linkHref);
-		}
-	} catch (Exception e) {
-		System.out.println("no");
-	}
-		
-		return linklist; 
-		
-	}
-		
-	}*/
+	
 	
 	public double getScore() throws Exception  {						//把google的搜尋結果抓出來後，算圖片，算他的分數
 		try {
@@ -87,17 +58,11 @@ public class WebPage extends htmlContent {
 		
 			} 
 		}catch (IOException e) {
-				// TODO Auto-generated catch block
 				
-			}// 算關鍵字在網頁中的數量
-			// 获得html文本内容
-			
+			}
 		
 			return score;
-		
 	}
-	
-	
 }
 
 	

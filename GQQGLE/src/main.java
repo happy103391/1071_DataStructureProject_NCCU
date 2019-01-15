@@ -143,9 +143,6 @@ public class main {
 
 					}
 				}
-				
-				//System.out.println("找完了ㄎㄎ");
-				
 			}System.out.println("找完了ㄎㄎ");
 		}sc.close();
 	}

@@ -24,10 +24,6 @@ public class WebTree {
 		printTree(root);
 	}
 	private void printTree(WebNode startNode) {
-		//(root,score
-		//    (node1,score)
-		//    (node2,score)
-		// )
 		 for(int i =0;i<startNode.getDepth();i++) {
 			   System.out.print("    ");
 		   }if(startNode.children.isEmpty()) {
